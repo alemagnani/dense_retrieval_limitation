@@ -172,3 +172,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+char_trigrams/ann_limitation_combined_experiments/
+.idea
