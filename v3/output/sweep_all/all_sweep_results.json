@@ -1,0 +1,46 @@
+[
+  {
+    "run_name": "homedepot.standard.Flat_d256_across_tokens",
+    "metrics": {
+      "Recall@1": 0.06166702741702742,
+      "Recall@5": 0.17790487290487292,
+      "Recall@10": 0.27434149184149187,
+      "Recall@20": 0.369945498945499,
+      "Recall@50": 0.5081916416916417,
+      "Recall@100": 0.5847529692529693
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.050127344877344875,
+      "Recall@5": 0.1351707459207459,
+      "Recall@10": 0.17971475746475746,
+      "Recall@20": 0.22650912975912976,
+      "Recall@50": 0.29237359862359863,
+      "Recall@100": 0.3329050949050949
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d256_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.06166702741702742,
+      "Recall@5": 0.17379773004773008,
+      "Recall@10": 0.26380577755577755,
+      "Recall@20": 0.3533221223221223,
+      "Recall@50": 0.48338644688644683,
+      "Recall@100": 0.5658395493395493
+    }
+  },
+  {
+    "run_name": "homedepot.standard.BM25",
+    "metrics": {
+      "Recall@1": 0.09255287361347968,
+      "Recall@5": 0.3306220995614936,
+      "Recall@10": 0.4652604410180168,
+      "Recall@20": 0.5890141844687299,
+      "Recall@50": 0.6975425528455831,
+      "Recall@100": 0.7613415484627606
+    }
+  }
+]

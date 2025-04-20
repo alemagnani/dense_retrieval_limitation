@@ -1,0 +1,2404 @@
+[
+  {
+    "run_name": "homedepot.id.Flat_d256_across_tokens",
+    "metrics": {
+      "Recall@1": 0.218,
+      "Recall@5": 0.423,
+      "Recall@10": 0.501,
+      "Recall@20": 0.585,
+      "Recall@50": 0.694,
+      "Recall@100": 0.769
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.088,
+      "Recall@5": 0.14,
+      "Recall@10": 0.154,
+      "Recall@20": 0.163,
+      "Recall@50": 0.172,
+      "Recall@100": 0.176
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.11,
+      "Recall@5": 0.19,
+      "Recall@10": 0.216,
+      "Recall@20": 0.245,
+      "Recall@50": 0.261,
+      "Recall@100": 0.271
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.181,
+      "Recall@5": 0.323,
+      "Recall@10": 0.378,
+      "Recall@20": 0.43,
+      "Recall@50": 0.491,
+      "Recall@100": 0.519
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.085,
+      "Recall@5": 0.13,
+      "Recall@10": 0.147,
+      "Recall@20": 0.158,
+      "Recall@50": 0.173,
+      "Recall@100": 0.179
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.122,
+      "Recall@5": 0.209,
+      "Recall@10": 0.239,
+      "Recall@20": 0.262,
+      "Recall@50": 0.29,
+      "Recall@100": 0.3
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.16,
+      "Recall@5": 0.313,
+      "Recall@10": 0.369,
+      "Recall@20": 0.412,
+      "Recall@50": 0.471,
+      "Recall@100": 0.501
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.094,
+      "Recall@5": 0.129,
+      "Recall@10": 0.137,
+      "Recall@20": 0.143,
+      "Recall@50": 0.153,
+      "Recall@100": 0.154
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.132,
+      "Recall@5": 0.205,
+      "Recall@10": 0.224,
+      "Recall@20": 0.243,
+      "Recall@50": 0.259,
+      "Recall@100": 0.276
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.213,
+      "Recall@5": 0.357,
+      "Recall@10": 0.394,
+      "Recall@20": 0.447,
+      "Recall@50": 0.489,
+      "Recall@100": 0.523
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d256_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.147,
+      "Recall@5": 0.229,
+      "Recall@10": 0.25,
+      "Recall@20": 0.267,
+      "Recall@50": 0.277,
+      "Recall@100": 0.294
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d256_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.14,
+      "Recall@5": 0.223,
+      "Recall@10": 0.252,
+      "Recall@20": 0.268,
+      "Recall@50": 0.29,
+      "Recall@100": 0.3
+    }
+  },
+  {
+    "run_name": "homedepot.id.Flat_d512_across_tokens",
+    "metrics": {
+      "Recall@1": 0.382,
+      "Recall@5": 0.673,
+      "Recall@10": 0.785,
+      "Recall@20": 0.858,
+      "Recall@50": 0.933,
+      "Recall@100": 0.96
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.132,
+      "Recall@5": 0.19,
+      "Recall@10": 0.195,
+      "Recall@20": 0.198,
+      "Recall@50": 0.2,
+      "Recall@100": 0.201
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.17,
+      "Recall@5": 0.264,
+      "Recall@10": 0.278,
+      "Recall@20": 0.29,
+      "Recall@50": 0.297,
+      "Recall@100": 0.298
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.276,
+      "Recall@5": 0.456,
+      "Recall@10": 0.51,
+      "Recall@20": 0.54,
+      "Recall@50": 0.566,
+      "Recall@100": 0.575
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.114,
+      "Recall@5": 0.162,
+      "Recall@10": 0.168,
+      "Recall@20": 0.172,
+      "Recall@50": 0.173,
+      "Recall@100": 0.175
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.173,
+      "Recall@5": 0.259,
+      "Recall@10": 0.272,
+      "Recall@20": 0.286,
+      "Recall@50": 0.289,
+      "Recall@100": 0.291
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.304,
+      "Recall@5": 0.504,
+      "Recall@10": 0.553,
+      "Recall@20": 0.58,
+      "Recall@50": 0.612,
+      "Recall@100": 0.618
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.122,
+      "Recall@5": 0.163,
+      "Recall@10": 0.168,
+      "Recall@20": 0.17,
+      "Recall@50": 0.171,
+      "Recall@100": 0.172
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.182,
+      "Recall@5": 0.273,
+      "Recall@10": 0.287,
+      "Recall@20": 0.294,
+      "Recall@50": 0.297,
+      "Recall@100": 0.298
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.309,
+      "Recall@5": 0.494,
+      "Recall@10": 0.545,
+      "Recall@20": 0.575,
+      "Recall@50": 0.602,
+      "Recall@100": 0.609
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d512_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.176,
+      "Recall@5": 0.258,
+      "Recall@10": 0.272,
+      "Recall@20": 0.29,
+      "Recall@50": 0.292,
+      "Recall@100": 0.294
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d512_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.177,
+      "Recall@5": 0.252,
+      "Recall@10": 0.26,
+      "Recall@20": 0.267,
+      "Recall@50": 0.267,
+      "Recall@100": 0.269
+    }
+  },
+  {
+    "run_name": "homedepot.id.Flat_d1024_across_tokens",
+    "metrics": {
+      "Recall@1": 0.459,
+      "Recall@5": 0.785,
+      "Recall@10": 0.874,
+      "Recall@20": 0.94,
+      "Recall@50": 0.98,
+      "Recall@100": 0.997
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.145,
+      "Recall@5": 0.188,
+      "Recall@10": 0.188,
+      "Recall@20": 0.188,
+      "Recall@50": 0.19,
+      "Recall@100": 0.19
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.216,
+      "Recall@5": 0.298,
+      "Recall@10": 0.307,
+      "Recall@20": 0.309,
+      "Recall@50": 0.311,
+      "Recall@100": 0.312
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.34,
+      "Recall@5": 0.523,
+      "Recall@10": 0.563,
+      "Recall@20": 0.581,
+      "Recall@50": 0.591,
+      "Recall@100": 0.593
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.134,
+      "Recall@5": 0.17,
+      "Recall@10": 0.174,
+      "Recall@20": 0.175,
+      "Recall@50": 0.176,
+      "Recall@100": 0.176
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.206,
+      "Recall@5": 0.279,
+      "Recall@10": 0.287,
+      "Recall@20": 0.292,
+      "Recall@50": 0.292,
+      "Recall@100": 0.293
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.363,
+      "Recall@5": 0.552,
+      "Recall@10": 0.59,
+      "Recall@20": 0.608,
+      "Recall@50": 0.617,
+      "Recall@100": 0.618
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.141,
+      "Recall@5": 0.181,
+      "Recall@10": 0.183,
+      "Recall@20": 0.184,
+      "Recall@50": 0.187,
+      "Recall@100": 0.187
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.22,
+      "Recall@5": 0.295,
+      "Recall@10": 0.305,
+      "Recall@20": 0.308,
+      "Recall@50": 0.31,
+      "Recall@100": 0.311
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.362,
+      "Recall@5": 0.54,
+      "Recall@10": 0.568,
+      "Recall@20": 0.585,
+      "Recall@50": 0.598,
+      "Recall@100": 0.6
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d1024_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.223,
+      "Recall@5": 0.315,
+      "Recall@10": 0.327,
+      "Recall@20": 0.332,
+      "Recall@50": 0.336,
+      "Recall@100": 0.336
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d1024_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.215,
+      "Recall@5": 0.281,
+      "Recall@10": 0.289,
+      "Recall@20": 0.298,
+      "Recall@50": 0.302,
+      "Recall@100": 0.302
+    }
+  },
+  {
+    "run_name": "homedepot.id.Flat_d256_within_token",
+    "metrics": {
+      "Recall@1": 0.427,
+      "Recall@5": 0.644,
+      "Recall@10": 0.722,
+      "Recall@20": 0.795,
+      "Recall@50": 0.857,
+      "Recall@100": 0.906
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.119,
+      "Recall@5": 0.143,
+      "Recall@10": 0.148,
+      "Recall@20": 0.15,
+      "Recall@50": 0.156,
+      "Recall@100": 0.157
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.173,
+      "Recall@5": 0.228,
+      "Recall@10": 0.24,
+      "Recall@20": 0.249,
+      "Recall@50": 0.256,
+      "Recall@100": 0.261
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.311,
+      "Recall@5": 0.44,
+      "Recall@10": 0.479,
+      "Recall@20": 0.517,
+      "Recall@50": 0.539,
+      "Recall@100": 0.554
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.108,
+      "Recall@5": 0.144,
+      "Recall@10": 0.152,
+      "Recall@20": 0.154,
+      "Recall@50": 0.161,
+      "Recall@100": 0.164
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.183,
+      "Recall@5": 0.246,
+      "Recall@10": 0.265,
+      "Recall@20": 0.275,
+      "Recall@50": 0.286,
+      "Recall@100": 0.291
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.319,
+      "Recall@5": 0.453,
+      "Recall@10": 0.484,
+      "Recall@20": 0.523,
+      "Recall@50": 0.543,
+      "Recall@100": 0.561
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.117,
+      "Recall@5": 0.147,
+      "Recall@10": 0.151,
+      "Recall@20": 0.155,
+      "Recall@50": 0.158,
+      "Recall@100": 0.159
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.195,
+      "Recall@5": 0.252,
+      "Recall@10": 0.263,
+      "Recall@20": 0.276,
+      "Recall@50": 0.29,
+      "Recall@100": 0.294
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d256_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.331,
+      "Recall@5": 0.47,
+      "Recall@10": 0.503,
+      "Recall@20": 0.536,
+      "Recall@50": 0.557,
+      "Recall@100": 0.576
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d256_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.267,
+      "Recall@5": 0.342,
+      "Recall@10": 0.371,
+      "Recall@20": 0.387,
+      "Recall@50": 0.4,
+      "Recall@100": 0.408
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d256_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.23,
+      "Recall@5": 0.311,
+      "Recall@10": 0.338,
+      "Recall@20": 0.352,
+      "Recall@50": 0.366,
+      "Recall@100": 0.374
+    }
+  },
+  {
+    "run_name": "homedepot.id.Flat_d512_within_token",
+    "metrics": {
+      "Recall@1": 0.546,
+      "Recall@5": 0.82,
+      "Recall@10": 0.897,
+      "Recall@20": 0.943,
+      "Recall@50": 0.977,
+      "Recall@100": 0.989
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.153,
+      "Recall@5": 0.181,
+      "Recall@10": 0.185,
+      "Recall@20": 0.186,
+      "Recall@50": 0.186,
+      "Recall@100": 0.186
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.229,
+      "Recall@5": 0.284,
+      "Recall@10": 0.293,
+      "Recall@20": 0.299,
+      "Recall@50": 0.302,
+      "Recall@100": 0.302
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.391,
+      "Recall@5": 0.54,
+      "Recall@10": 0.565,
+      "Recall@20": 0.579,
+      "Recall@50": 0.588,
+      "Recall@100": 0.592
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.127,
+      "Recall@5": 0.163,
+      "Recall@10": 0.167,
+      "Recall@20": 0.169,
+      "Recall@50": 0.17,
+      "Recall@100": 0.17
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.218,
+      "Recall@5": 0.28,
+      "Recall@10": 0.286,
+      "Recall@20": 0.291,
+      "Recall@50": 0.293,
+      "Recall@100": 0.293
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.403,
+      "Recall@5": 0.545,
+      "Recall@10": 0.572,
+      "Recall@20": 0.582,
+      "Recall@50": 0.592,
+      "Recall@100": 0.595
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.142,
+      "Recall@5": 0.178,
+      "Recall@10": 0.178,
+      "Recall@20": 0.178,
+      "Recall@50": 0.178,
+      "Recall@100": 0.178
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.245,
+      "Recall@5": 0.301,
+      "Recall@10": 0.306,
+      "Recall@20": 0.309,
+      "Recall@50": 0.31,
+      "Recall@100": 0.31
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d512_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.411,
+      "Recall@5": 0.558,
+      "Recall@10": 0.589,
+      "Recall@20": 0.599,
+      "Recall@50": 0.606,
+      "Recall@100": 0.61
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d512_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.275,
+      "Recall@5": 0.363,
+      "Recall@10": 0.374,
+      "Recall@20": 0.381,
+      "Recall@50": 0.385,
+      "Recall@100": 0.386
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d512_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.268,
+      "Recall@5": 0.346,
+      "Recall@10": 0.366,
+      "Recall@20": 0.373,
+      "Recall@50": 0.375,
+      "Recall@100": 0.376
+    }
+  },
+  {
+    "run_name": "homedepot.id.Flat_d1024_within_token",
+    "metrics": {
+      "Recall@1": 0.643,
+      "Recall@5": 0.884,
+      "Recall@10": 0.942,
+      "Recall@20": 0.976,
+      "Recall@50": 0.997,
+      "Recall@100": 0.998
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.17,
+      "Recall@5": 0.189,
+      "Recall@10": 0.192,
+      "Recall@20": 0.192,
+      "Recall@50": 0.192,
+      "Recall@100": 0.192
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.255,
+      "Recall@5": 0.302,
+      "Recall@10": 0.305,
+      "Recall@20": 0.31,
+      "Recall@50": 0.31,
+      "Recall@100": 0.31
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.458,
+      "Recall@5": 0.564,
+      "Recall@10": 0.584,
+      "Recall@20": 0.592,
+      "Recall@50": 0.597,
+      "Recall@100": 0.598
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.159,
+      "Recall@5": 0.181,
+      "Recall@10": 0.184,
+      "Recall@20": 0.184,
+      "Recall@50": 0.184,
+      "Recall@100": 0.184
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.264,
+      "Recall@5": 0.306,
+      "Recall@10": 0.312,
+      "Recall@20": 0.315,
+      "Recall@50": 0.316,
+      "Recall@100": 0.316
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.494,
+      "Recall@5": 0.599,
+      "Recall@10": 0.619,
+      "Recall@20": 0.628,
+      "Recall@50": 0.633,
+      "Recall@100": 0.633
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.174,
+      "Recall@5": 0.194,
+      "Recall@10": 0.198,
+      "Recall@20": 0.199,
+      "Recall@50": 0.199,
+      "Recall@100": 0.199
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.273,
+      "Recall@5": 0.31,
+      "Recall@10": 0.314,
+      "Recall@20": 0.317,
+      "Recall@50": 0.317,
+      "Recall@100": 0.317
+    }
+  },
+  {
+    "run_name": "homedepot.id.IVF_d1024_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.481,
+      "Recall@5": 0.585,
+      "Recall@10": 0.601,
+      "Recall@20": 0.612,
+      "Recall@50": 0.614,
+      "Recall@100": 0.614
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d1024_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.316,
+      "Recall@5": 0.371,
+      "Recall@10": 0.379,
+      "Recall@20": 0.382,
+      "Recall@50": 0.384,
+      "Recall@100": 0.384
+    }
+  },
+  {
+    "run_name": "homedepot.id.HNSW_d1024_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.3,
+      "Recall@5": 0.351,
+      "Recall@10": 0.359,
+      "Recall@20": 0.361,
+      "Recall@50": 0.361,
+      "Recall@100": 0.361
+    }
+  },
+  {
+    "run_name": "homedepot.id.BM25",
+    "metrics": {}
+  },
+  {
+    "run_name": "homedepot.standard.Flat_d256_across_tokens",
+    "metrics": {
+      "Recall@1": 0.07227700632700632,
+      "Recall@5": 0.20251739094239093,
+      "Recall@10": 0.28090575813075813,
+      "Recall@20": 0.3616816128316128,
+      "Recall@50": 0.47764136419136416,
+      "Recall@100": 0.5612601842601842
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.05391784326784327,
+      "Recall@5": 0.1423620879120879,
+      "Recall@10": 0.18548272283272282,
+      "Recall@20": 0.23399544899544902,
+      "Recall@50": 0.3009862554112554,
+      "Recall@100": 0.3500358252858252
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.059814235764235765,
+      "Recall@5": 0.16076721056721055,
+      "Recall@10": 0.21340341325341325,
+      "Recall@20": 0.2728614357864358,
+      "Recall@50": 0.35246402208902206,
+      "Recall@100": 0.40869919524919524
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.06838414918414917,
+      "Recall@5": 0.1872347791097791,
+      "Recall@10": 0.2565166167166167,
+      "Recall@20": 0.32854876234876235,
+      "Recall@50": 0.43172476134976134,
+      "Recall@100": 0.5033637473637473
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.060540365190365195,
+      "Recall@5": 0.1617557525807526,
+      "Recall@10": 0.21127651792651791,
+      "Recall@20": 0.2647952325452325,
+      "Recall@50": 0.3489922161172161,
+      "Recall@100": 0.4033541458541458
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.06324367299367299,
+      "Recall@5": 0.17461378343878345,
+      "Recall@10": 0.23580337717837718,
+      "Recall@20": 0.2970239538239538,
+      "Recall@50": 0.3906554584304584,
+      "Recall@100": 0.4568978826728827
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.07055200632700633,
+      "Recall@5": 0.19461551504051505,
+      "Recall@10": 0.2668692141192141,
+      "Recall@20": 0.3422276334776335,
+      "Recall@50": 0.452070646020646,
+      "Recall@100": 0.5284434343434343
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.05903653013653013,
+      "Recall@5": 0.1664551504051504,
+      "Recall@10": 0.22585067432567432,
+      "Recall@20": 0.28395880785880784,
+      "Recall@50": 0.3723310273060273,
+      "Recall@100": 0.4322500666000666
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.06313414918414918,
+      "Recall@5": 0.18064443611943612,
+      "Recall@10": 0.24568975468975468,
+      "Recall@20": 0.31276938894438894,
+      "Recall@50": 0.4073885919635919,
+      "Recall@100": 0.47633080253080257
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.07079645077145076,
+      "Recall@5": 0.19764643134643137,
+      "Recall@10": 0.2731752386502386,
+      "Recall@20": 0.35334040404040407,
+      "Recall@50": 0.4606742895992896,
+      "Recall@100": 0.5362554473304473
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d256_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.07106589521589521,
+      "Recall@5": 0.20069239094239094,
+      "Recall@10": 0.278340318015318,
+      "Recall@20": 0.35831328671328666,
+      "Recall@50": 0.4722939976689977,
+      "Recall@100": 0.5528688061938062
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d256_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.07050557775557775,
+      "Recall@5": 0.19887532745032746,
+      "Recall@10": 0.2758073815073815,
+      "Recall@20": 0.35606381673881676,
+      "Recall@50": 0.46782273837273836,
+      "Recall@100": 0.550461111111111
+    }
+  },
+  {
+    "run_name": "homedepot.standard.Flat_d512_across_tokens",
+    "metrics": {
+      "Recall@1": 0.07399258796758797,
+      "Recall@5": 0.2195573704073704,
+      "Recall@10": 0.3113928737928738,
+      "Recall@20": 0.4084957903207903,
+      "Recall@50": 0.5411606324231325,
+      "Recall@100": 0.6210807151182152
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.04825604395604395,
+      "Recall@5": 0.1491266344766345,
+      "Recall@10": 0.20381636141636142,
+      "Recall@20": 0.26596494477744476,
+      "Recall@50": 0.337845874958375,
+      "Recall@100": 0.3782731476856477
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.05701722721722722,
+      "Recall@5": 0.17004853202353204,
+      "Recall@10": 0.23359254911754915,
+      "Recall@20": 0.3055142898767899,
+      "Recall@50": 0.3950569666444666,
+      "Recall@100": 0.44589790071040075
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.06784576257076257,
+      "Recall@5": 0.20163074703074704,
+      "Recall@10": 0.28156772949272957,
+      "Recall@20": 0.37234687257187254,
+      "Recall@50": 0.48847442696192694,
+      "Recall@100": 0.5579842532467533
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.05831448551448551,
+      "Recall@5": 0.1724101121101121,
+      "Recall@10": 0.2340176934176934,
+      "Recall@20": 0.30278669941169944,
+      "Recall@50": 0.39329511877011875,
+      "Recall@100": 0.44173563103563107
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.06143587801087801,
+      "Recall@5": 0.1868637196137196,
+      "Recall@10": 0.257457375957376,
+      "Recall@20": 0.33785809190809185,
+      "Recall@50": 0.4406868076368077,
+      "Recall@100": 0.49828015873015874
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.07121361971361971,
+      "Recall@5": 0.21176606449106447,
+      "Recall@10": 0.2939865245865246,
+      "Recall@20": 0.3881842463092463,
+      "Recall@50": 0.5106237165612165,
+      "Recall@100": 0.5858673340548342
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.0616763542013542,
+      "Recall@5": 0.17659896492396496,
+      "Recall@10": 0.24535939615939617,
+      "Recall@20": 0.3229021936396937,
+      "Recall@50": 0.4189371142746143,
+      "Recall@100": 0.47735612998113
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.06472790542790542,
+      "Recall@5": 0.19236729104229106,
+      "Recall@10": 0.2691272893772894,
+      "Recall@20": 0.3527208694083694,
+      "Recall@50": 0.4586531066156066,
+      "Recall@100": 0.5231225621600621
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.07221361971361973,
+      "Recall@5": 0.21273554501054504,
+      "Recall@10": 0.30199842934842935,
+      "Recall@20": 0.39465293317793315,
+      "Recall@50": 0.5205285506160505,
+      "Recall@100": 0.596692680930181
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d512_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.07264258796758796,
+      "Recall@5": 0.21509943389943387,
+      "Recall@10": 0.3057099372849373,
+      "Recall@20": 0.4003787268287268,
+      "Recall@50": 0.5253062673437673,
+      "Recall@100": 0.6043163794538795
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d512_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.07176758796758796,
+      "Recall@5": 0.2147661005661006,
+      "Recall@10": 0.3034706154956155,
+      "Recall@20": 0.3995874209124209,
+      "Recall@50": 0.527391249028749,
+      "Recall@100": 0.6041239441114442
+    }
+  },
+  {
+    "run_name": "homedepot.standard.Flat_d1024_across_tokens",
+    "metrics": {
+      "Recall@1": 0.07491612276612276,
+      "Recall@5": 0.22754177489177488,
+      "Recall@10": 0.3270241758241758,
+      "Recall@20": 0.4262399572649573,
+      "Recall@50": 0.5599648559773559,
+      "Recall@100": 0.6364018093018095
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.0554142107892108,
+      "Recall@5": 0.1561024531024531,
+      "Recall@10": 0.21273406315906315,
+      "Recall@20": 0.26836197968697967,
+      "Recall@50": 0.3412571955821955,
+      "Recall@100": 0.3837494338994339
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.06256063936063937,
+      "Recall@5": 0.1763410173160173,
+      "Recall@10": 0.24765873570873573,
+      "Recall@20": 0.31253702408702405,
+      "Recall@50": 0.39594094516594514,
+      "Recall@100": 0.4510245532245532
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.0688260434010434,
+      "Recall@5": 0.2072265873015873,
+      "Recall@10": 0.2951462537462537,
+      "Recall@20": 0.3813289793539793,
+      "Recall@50": 0.49783539654789655,
+      "Recall@100": 0.5661672161172162
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.05899191641691641,
+      "Recall@5": 0.16483799811299812,
+      "Recall@10": 0.23305535575535574,
+      "Recall@20": 0.30000045787545787,
+      "Recall@50": 0.37906888389388393,
+      "Recall@100": 0.43177735597735595
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.06331568986568988,
+      "Recall@5": 0.18723300865800865,
+      "Recall@10": 0.26449080641580647,
+      "Recall@20": 0.34155259740259736,
+      "Recall@50": 0.4354645118770119,
+      "Recall@100": 0.4959885642135642
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.0705010434010434,
+      "Recall@5": 0.21562979797979795,
+      "Recall@10": 0.3074475163725164,
+      "Recall@20": 0.39987116217116214,
+      "Recall@50": 0.5221343975468976,
+      "Recall@100": 0.5951027972027972
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.06103084138084138,
+      "Recall@5": 0.186890873015873,
+      "Recall@10": 0.2647282162282162,
+      "Recall@20": 0.3396425074925075,
+      "Recall@50": 0.4295284770784771,
+      "Recall@100": 0.48307857975357976
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.06635659895659896,
+      "Recall@5": 0.20150746753246757,
+      "Recall@10": 0.28671678044178045,
+      "Recall@20": 0.36721694139194144,
+      "Recall@50": 0.4718499347874348,
+      "Recall@100": 0.5378954989454989
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.07125937673437673,
+      "Recall@5": 0.220705303030303,
+      "Recall@10": 0.31433734321234325,
+      "Recall@20": 0.409507128982129,
+      "Recall@50": 0.5345081349206349,
+      "Recall@100": 0.6101768231768231
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d1024_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.07433874181374182,
+      "Recall@5": 0.22386756854256853,
+      "Recall@10": 0.32052814407814406,
+      "Recall@20": 0.4178693223443224,
+      "Recall@50": 0.5443354548229549,
+      "Recall@100": 0.6214820651570651
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d1024_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.07391612276612275,
+      "Recall@5": 0.22284852092352092,
+      "Recall@10": 0.3211475885225885,
+      "Recall@20": 0.41949590964590966,
+      "Recall@50": 0.5450897116772117,
+      "Recall@100": 0.6222341755466755
+    }
+  },
+  {
+    "run_name": "homedepot.standard.Flat_d256_within_token",
+    "metrics": {
+      "Recall@1": 0.07156226273726272,
+      "Recall@5": 0.22010215340215342,
+      "Recall@10": 0.30688784826284826,
+      "Recall@20": 0.39845635753135755,
+      "Recall@50": 0.5165146076146077,
+      "Recall@100": 0.5986623432123431
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.05407456432456432,
+      "Recall@5": 0.15357627650127648,
+      "Recall@10": 0.20666471583971582,
+      "Recall@20": 0.2604888222888223,
+      "Recall@50": 0.33287010212010215,
+      "Recall@100": 0.38600472582972584
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.05994357586857587,
+      "Recall@5": 0.17763713508713508,
+      "Recall@10": 0.24183542291042293,
+      "Recall@20": 0.30927962037962037,
+      "Recall@50": 0.3933869713619714,
+      "Recall@100": 0.45272466977466974
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.06875948495948495,
+      "Recall@5": 0.20288570318570318,
+      "Recall@10": 0.28232655677655677,
+      "Recall@20": 0.3641806721056721,
+      "Recall@50": 0.4681141275391275,
+      "Recall@100": 0.5445234432234433
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.058423734598734595,
+      "Recall@5": 0.17122229437229436,
+      "Recall@10": 0.23572775835275836,
+      "Recall@20": 0.2988586469086469,
+      "Recall@50": 0.3821519536019536,
+      "Recall@100": 0.43992490009990015
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.06357654845154846,
+      "Recall@5": 0.1891848013098013,
+      "Recall@10": 0.26057597957597955,
+      "Recall@20": 0.3356122738372738,
+      "Recall@50": 0.43228735986235983,
+      "Recall@100": 0.49626684426684425
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.06915115162615162,
+      "Recall@5": 0.2055650321900322,
+      "Recall@10": 0.28399675879675873,
+      "Recall@20": 0.3689893661893662,
+      "Recall@50": 0.47897495004995005,
+      "Recall@100": 0.5565779054279054
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.0621039294039294,
+      "Recall@5": 0.1871993756243756,
+      "Recall@10": 0.2575770618270618,
+      "Recall@20": 0.3275330447330448,
+      "Recall@50": 0.41811810134310134,
+      "Recall@100": 0.47639471084471086
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.06801385003885003,
+      "Recall@5": 0.1999813381063381,
+      "Recall@10": 0.27865732878232874,
+      "Recall@20": 0.356373482073482,
+      "Recall@50": 0.4580053862803863,
+      "Recall@100": 0.5275412420912421
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d256_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.07042817182817182,
+      "Recall@5": 0.21339021256521254,
+      "Recall@10": 0.29793579198579195,
+      "Recall@20": 0.3851459318459318,
+      "Recall@50": 0.4977710539460539,
+      "Recall@100": 0.5760275308025308
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d256_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.06911226273726274,
+      "Recall@5": 0.21585846653346652,
+      "Recall@10": 0.3003476967476968,
+      "Recall@20": 0.39053988233988235,
+      "Recall@50": 0.506447410922411,
+      "Recall@100": 0.5896833028083028
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d256_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.07013726273726274,
+      "Recall@5": 0.2173588994338994,
+      "Recall@10": 0.30198626096126097,
+      "Recall@20": 0.39138318348318346,
+      "Recall@50": 0.5052852425352425,
+      "Recall@100": 0.5901448468198469
+    }
+  },
+  {
+    "run_name": "homedepot.standard.Flat_d512_within_token",
+    "metrics": {
+      "Recall@1": 0.07438474858474858,
+      "Recall@5": 0.23662245393495393,
+      "Recall@10": 0.33139344405594406,
+      "Recall@20": 0.42552218337218334,
+      "Recall@50": 0.560226819014319,
+      "Recall@100": 0.6457594905094904
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.05582255522255522,
+      "Recall@5": 0.16465000416250417,
+      "Recall@10": 0.21863866272616275,
+      "Recall@20": 0.2756523032523032,
+      "Recall@50": 0.36132551337551344,
+      "Recall@100": 0.40519171106671104
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.06128088855588855,
+      "Recall@5": 0.18536669302919304,
+      "Recall@10": 0.2519946595071595,
+      "Recall@20": 0.3188173298923299,
+      "Recall@50": 0.4170752539127539,
+      "Recall@100": 0.4718070512820513
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.07132363747363747,
+      "Recall@5": 0.22297357226107226,
+      "Recall@10": 0.30942151043401045,
+      "Recall@20": 0.39501171051171047,
+      "Recall@50": 0.5163687631812631,
+      "Recall@100": 0.593777047952048
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.05755819735819735,
+      "Recall@5": 0.18567327256077254,
+      "Recall@10": 0.25221559690309686,
+      "Recall@20": 0.3223465395715395,
+      "Recall@50": 0.415869092019092,
+      "Recall@100": 0.46759927294927295
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.0648883560883561,
+      "Recall@5": 0.20280290126540126,
+      "Recall@10": 0.2796181554556555,
+      "Recall@20": 0.3577008769008769,
+      "Recall@50": 0.46472811632811634,
+      "Recall@100": 0.5285373570873572
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.07317363747363749,
+      "Recall@5": 0.22738872377622377,
+      "Recall@10": 0.3175005869130869,
+      "Recall@20": 0.4074812631812632,
+      "Recall@50": 0.5334119810744811,
+      "Recall@100": 0.6111494325119324
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.06448319735819735,
+      "Recall@5": 0.20290012348762348,
+      "Recall@10": 0.28108435314685315,
+      "Recall@20": 0.3543004911754912,
+      "Recall@50": 0.45719702380952376,
+      "Recall@100": 0.5146646409146409
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.06840780053280053,
+      "Recall@5": 0.2138100801975802,
+      "Recall@10": 0.29700354506604504,
+      "Recall@20": 0.3778059745809746,
+      "Recall@50": 0.49305394327894325,
+      "Recall@100": 0.5634995837495838
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d512_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.07428474858474857,
+      "Recall@5": 0.23177721583971583,
+      "Recall@10": 0.3227597138972139,
+      "Recall@20": 0.41181026751026745,
+      "Recall@50": 0.5416640012765013,
+      "Recall@100": 0.623479501054501
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d512_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.07320141525141524,
+      "Recall@5": 0.2340689185814186,
+      "Recall@10": 0.3281045551670552,
+      "Recall@20": 0.42122178654678655,
+      "Recall@50": 0.5514976884226884,
+      "Recall@100": 0.6324611860361861
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d512_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.07375974858474858,
+      "Recall@5": 0.2340609099234099,
+      "Recall@10": 0.3272707889332889,
+      "Recall@20": 0.42056778221778224,
+      "Recall@50": 0.551132079032079,
+      "Recall@100": 0.6337742812742813
+    }
+  },
+  {
+    "run_name": "homedepot.standard.Flat_d1024_within_token",
+    "metrics": {
+      "Recall@1": 0.0826004551004551,
+      "Recall@5": 0.24721595626595627,
+      "Recall@10": 0.3437456376956377,
+      "Recall@20": 0.4381370171495172,
+      "Recall@50": 0.5670019161394161,
+      "Recall@100": 0.6586853479853481
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.06079827672327673,
+      "Recall@5": 0.1693462592962593,
+      "Recall@10": 0.2295662531912532,
+      "Recall@20": 0.2883254967254967,
+      "Recall@50": 0.3671638084138084,
+      "Recall@100": 0.41784095071595073
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.06565561383061384,
+      "Recall@5": 0.18539239926739928,
+      "Recall@10": 0.2530439699189699,
+      "Recall@20": 0.32494702658452657,
+      "Recall@50": 0.4210333902208902,
+      "Recall@100": 0.4810047175047175
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.07446315351315351,
+      "Recall@5": 0.22663381340881342,
+      "Recall@10": 0.3138674630924631,
+      "Recall@20": 0.40371616577866576,
+      "Recall@50": 0.5202276806526807,
+      "Recall@100": 0.6028198246198246
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.06569884282384282,
+      "Recall@5": 0.1896221250971251,
+      "Recall@10": 0.25671169108669106,
+      "Recall@20": 0.32448665223665224,
+      "Recall@50": 0.4131688048063048,
+      "Recall@100": 0.4682316475191475
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.07128739593739593,
+      "Recall@5": 0.20782670662670663,
+      "Recall@10": 0.2842243534243534,
+      "Recall@20": 0.36728873765123765,
+      "Recall@50": 0.4680058871683872,
+      "Recall@100": 0.5340561188811189
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.07731156621156622,
+      "Recall@5": 0.23527147574647575,
+      "Recall@10": 0.3215971167721168,
+      "Recall@20": 0.4130914543789544,
+      "Recall@50": 0.5344611693861693,
+      "Recall@100": 0.6181934287934288
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.07087660950160951,
+      "Recall@5": 0.21201822899322897,
+      "Recall@10": 0.28756836496836496,
+      "Recall@20": 0.3645955849705849,
+      "Recall@50": 0.4629766372516373,
+      "Recall@100": 0.5254799533799533
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.07343378843378844,
+      "Recall@5": 0.22437468642468641,
+      "Recall@10": 0.30632366799866795,
+      "Recall@20": 0.3903632437007437,
+      "Recall@50": 0.49983489149739146,
+      "Recall@100": 0.5733727355977355
+    }
+  },
+  {
+    "run_name": "homedepot.standard.IVF_d1024_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.0801004551004551,
+      "Recall@5": 0.2418044122544123,
+      "Recall@10": 0.33507969252969244,
+      "Recall@20": 0.4257169594294594,
+      "Recall@50": 0.5489160395160395,
+      "Recall@100": 0.6371356365856365
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d1024_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.08272942335442336,
+      "Recall@5": 0.24685365467865467,
+      "Recall@10": 0.33890238372738374,
+      "Recall@20": 0.4331699536574537,
+      "Recall@50": 0.5589045315795316,
+      "Recall@100": 0.6477210261960262
+    }
+  },
+  {
+    "run_name": "homedepot.standard.HNSW_d1024_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.07991712176712178,
+      "Recall@5": 0.2427667499167499,
+      "Recall@10": 0.33622936785436786,
+      "Recall@20": 0.4285263028638029,
+      "Recall@50": 0.5550569125319126,
+      "Recall@100": 0.6430952436452437
+    }
+  },
+  {
+    "run_name": "homedepot.standard.BM25",
+    "metrics": {
+      "Recall@1": 0.11829382279331724,
+      "Recall@5": 0.32216038090658916,
+      "Recall@10": 0.4474968941854685,
+      "Recall@20": 0.5668642249784818,
+      "Recall@50": 0.6804208290305358,
+      "Recall@100": 0.7465984246065135
+    }
+  },
+  {
+    "run_name": "homedepot.rare.Flat_d256_across_tokens",
+    "metrics": {
+      "Recall@1": 0.29406666666666664,
+      "Recall@5": 0.5145,
+      "Recall@10": 0.6134333333333334,
+      "Recall@20": 0.6962833333333333,
+      "Recall@50": 0.79715,
+      "Recall@100": 0.8618666666666668
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.12981666666666666,
+      "Recall@5": 0.2083,
+      "Recall@10": 0.2477,
+      "Recall@20": 0.2856,
+      "Recall@50": 0.3132333333333333,
+      "Recall@100": 0.32361666666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.17896666666666666,
+      "Recall@5": 0.28553333333333336,
+      "Recall@10": 0.3374166666666667,
+      "Recall@20": 0.38373333333333337,
+      "Recall@50": 0.42816666666666664,
+      "Recall@100": 0.4511666666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.25599999999999995,
+      "Recall@5": 0.4249666666666667,
+      "Recall@10": 0.5009,
+      "Recall@20": 0.5675166666666667,
+      "Recall@50": 0.6424166666666666,
+      "Recall@100": 0.6796666666666668
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.15978333333333333,
+      "Recall@5": 0.2515833333333333,
+      "Recall@10": 0.28956666666666664,
+      "Recall@20": 0.3240166666666667,
+      "Recall@50": 0.3542833333333333,
+      "Recall@100": 0.36638333333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.20195,
+      "Recall@5": 0.3285333333333333,
+      "Recall@10": 0.37866666666666665,
+      "Recall@20": 0.42438333333333333,
+      "Recall@50": 0.4644,
+      "Recall@100": 0.4847
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.2572,
+      "Recall@5": 0.43789999999999996,
+      "Recall@10": 0.5135833333333334,
+      "Recall@20": 0.5844833333333334,
+      "Recall@50": 0.6558166666666666,
+      "Recall@100": 0.69465
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.18186666666666668,
+      "Recall@5": 0.2892833333333333,
+      "Recall@10": 0.33935000000000004,
+      "Recall@20": 0.37756666666666666,
+      "Recall@50": 0.4149,
+      "Recall@100": 0.433
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.21810000000000002,
+      "Recall@5": 0.35046666666666665,
+      "Recall@10": 0.4184833333333334,
+      "Recall@20": 0.47218333333333334,
+      "Recall@50": 0.52325,
+      "Recall@100": 0.5491500000000001
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.2730333333333333,
+      "Recall@5": 0.46595,
+      "Recall@10": 0.5463833333333334,
+      "Recall@20": 0.6176999999999999,
+      "Recall@50": 0.6941666666666666,
+      "Recall@100": 0.7417166666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d256_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.2635333333333333,
+      "Recall@5": 0.45083333333333336,
+      "Recall@10": 0.533,
+      "Recall@20": 0.6046166666666666,
+      "Recall@50": 0.6883666666666666,
+      "Recall@100": 0.7268166666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d256_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.25973333333333337,
+      "Recall@5": 0.44468333333333326,
+      "Recall@10": 0.5229666666666667,
+      "Recall@20": 0.5953499999999999,
+      "Recall@50": 0.6724166666666668,
+      "Recall@100": 0.7098166666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.Flat_d512_across_tokens",
+    "metrics": {
+      "Recall@1": 0.3536,
+      "Recall@5": 0.5984166666666666,
+      "Recall@10": 0.6929666666666667,
+      "Recall@20": 0.7851666666666667,
+      "Recall@50": 0.87825,
+      "Recall@100": 0.9203333333333332
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.1621166666666667,
+      "Recall@5": 0.26348333333333335,
+      "Recall@10": 0.30219999999999997,
+      "Recall@20": 0.32306666666666667,
+      "Recall@50": 0.34035000000000004,
+      "Recall@100": 0.34803333333333336
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.20676666666666665,
+      "Recall@5": 0.33125,
+      "Recall@10": 0.38176666666666664,
+      "Recall@20": 0.41383333333333333,
+      "Recall@50": 0.44045000000000006,
+      "Recall@100": 0.4553666666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.28856666666666664,
+      "Recall@5": 0.4686166666666667,
+      "Recall@10": 0.5428166666666666,
+      "Recall@20": 0.60545,
+      "Recall@50": 0.6720833333333333,
+      "Recall@100": 0.69945
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.17626666666666665,
+      "Recall@5": 0.28801666666666664,
+      "Recall@10": 0.3296166666666666,
+      "Recall@20": 0.3541,
+      "Recall@50": 0.3747166666666667,
+      "Recall@100": 0.3896
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.21725,
+      "Recall@5": 0.35814999999999997,
+      "Recall@10": 0.4096166666666667,
+      "Recall@20": 0.44859999999999994,
+      "Recall@50": 0.48386666666666667,
+      "Recall@100": 0.5088499999999999
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.3033,
+      "Recall@5": 0.5041833333333334,
+      "Recall@10": 0.5796833333333334,
+      "Recall@20": 0.6517666666666666,
+      "Recall@50": 0.7246833333333333,
+      "Recall@100": 0.7567
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.19379999999999997,
+      "Recall@5": 0.3129166666666667,
+      "Recall@10": 0.3589333333333333,
+      "Recall@20": 0.3872833333333333,
+      "Recall@50": 0.41281666666666667,
+      "Recall@100": 0.4336333333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.23611666666666667,
+      "Recall@5": 0.38285,
+      "Recall@10": 0.4330333333333333,
+      "Recall@20": 0.48875,
+      "Recall@50": 0.5336833333333333,
+      "Recall@100": 0.5582333333333332
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.31160000000000004,
+      "Recall@5": 0.5110166666666667,
+      "Recall@10": 0.58885,
+      "Recall@20": 0.6613166666666666,
+      "Recall@50": 0.7363666666666667,
+      "Recall@100": 0.7678333333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d512_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.29610000000000003,
+      "Recall@5": 0.4915333333333333,
+      "Recall@10": 0.5722333333333334,
+      "Recall@20": 0.64355,
+      "Recall@50": 0.7144166666666667,
+      "Recall@100": 0.7436
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d512_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.2955,
+      "Recall@5": 0.49216666666666664,
+      "Recall@10": 0.5796166666666667,
+      "Recall@20": 0.6462333333333333,
+      "Recall@50": 0.7151166666666666,
+      "Recall@100": 0.7370333333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.Flat_d1024_across_tokens",
+    "metrics": {
+      "Recall@1": 0.37535,
+      "Recall@5": 0.6459,
+      "Recall@10": 0.7505166666666666,
+      "Recall@20": 0.83,
+      "Recall@50": 0.9022166666666667,
+      "Recall@100": 0.9384833333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.16496666666666665,
+      "Recall@5": 0.27035000000000003,
+      "Recall@10": 0.30346666666666666,
+      "Recall@20": 0.3264333333333333,
+      "Recall@50": 0.3460833333333333,
+      "Recall@100": 0.35655000000000003
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.21126666666666666,
+      "Recall@5": 0.35155,
+      "Recall@10": 0.3944499999999999,
+      "Recall@20": 0.42751666666666666,
+      "Recall@50": 0.4508333333333333,
+      "Recall@100": 0.4687166666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.2977666666666666,
+      "Recall@5": 0.4969666666666667,
+      "Recall@10": 0.5631333333333334,
+      "Recall@20": 0.6199666666666667,
+      "Recall@50": 0.6658833333333332,
+      "Recall@100": 0.6871499999999999
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.17853333333333332,
+      "Recall@5": 0.2877666666666667,
+      "Recall@10": 0.3170333333333333,
+      "Recall@20": 0.3458333333333334,
+      "Recall@50": 0.3707166666666667,
+      "Recall@100": 0.3774333333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.23013333333333333,
+      "Recall@5": 0.3685,
+      "Recall@10": 0.41546666666666665,
+      "Recall@20": 0.4566833333333334,
+      "Recall@50": 0.4876833333333333,
+      "Recall@100": 0.5020166666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.3341166666666667,
+      "Recall@5": 0.5447166666666667,
+      "Recall@10": 0.6229166666666667,
+      "Recall@20": 0.6825333333333333,
+      "Recall@50": 0.7386166666666667,
+      "Recall@100": 0.7622666666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.2018333333333333,
+      "Recall@5": 0.31971666666666665,
+      "Recall@10": 0.36091666666666666,
+      "Recall@20": 0.3888166666666666,
+      "Recall@50": 0.41419999999999996,
+      "Recall@100": 0.42601666666666665
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.25179999999999997,
+      "Recall@5": 0.4090833333333333,
+      "Recall@10": 0.46714999999999995,
+      "Recall@20": 0.5066,
+      "Recall@50": 0.54575,
+      "Recall@100": 0.5624666666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_across_tokens_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.33116666666666666,
+      "Recall@5": 0.5591333333333334,
+      "Recall@10": 0.64215,
+      "Recall@20": 0.7015999999999999,
+      "Recall@50": 0.7574000000000001,
+      "Recall@100": 0.7814500000000001
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d1024_across_tokens_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.3049,
+      "Recall@5": 0.5385500000000001,
+      "Recall@10": 0.6192333333333333,
+      "Recall@20": 0.6853333333333332,
+      "Recall@50": 0.7413,
+      "Recall@100": 0.7660333333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d1024_across_tokens_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.2992666666666666,
+      "Recall@5": 0.5252666666666667,
+      "Recall@10": 0.6043833333333333,
+      "Recall@20": 0.66535,
+      "Recall@50": 0.7206166666666667,
+      "Recall@100": 0.7392833333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.Flat_d256_within_token",
+    "metrics": {
+      "Recall@1": 0.3137833333333333,
+      "Recall@5": 0.5440666666666666,
+      "Recall@10": 0.6384666666666667,
+      "Recall@20": 0.7208500000000001,
+      "Recall@50": 0.8146666666666668,
+      "Recall@100": 0.8675166666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.14983333333333335,
+      "Recall@5": 0.25055,
+      "Recall@10": 0.2833,
+      "Recall@20": 0.3063666666666667,
+      "Recall@50": 0.3305166666666666,
+      "Recall@100": 0.34248333333333336
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.19223333333333334,
+      "Recall@5": 0.3237833333333333,
+      "Recall@10": 0.36529999999999996,
+      "Recall@20": 0.40036666666666665,
+      "Recall@50": 0.4419666666666666,
+      "Recall@100": 0.4599
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.25831666666666664,
+      "Recall@5": 0.43661666666666665,
+      "Recall@10": 0.5082666666666666,
+      "Recall@20": 0.5696666666666668,
+      "Recall@50": 0.6316166666666668,
+      "Recall@100": 0.6712666666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.17335,
+      "Recall@5": 0.27704999999999996,
+      "Recall@10": 0.3196333333333333,
+      "Recall@20": 0.35231666666666667,
+      "Recall@50": 0.3834666666666667,
+      "Recall@100": 0.399
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.205,
+      "Recall@5": 0.34246666666666664,
+      "Recall@10": 0.39426666666666665,
+      "Recall@20": 0.4336,
+      "Recall@50": 0.4824833333333334,
+      "Recall@100": 0.5056833333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.2669666666666667,
+      "Recall@5": 0.4570166666666666,
+      "Recall@10": 0.5305833333333334,
+      "Recall@20": 0.5955,
+      "Recall@50": 0.6603000000000001,
+      "Recall@100": 0.7025
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.18566666666666665,
+      "Recall@5": 0.30690000000000006,
+      "Recall@10": 0.34785000000000005,
+      "Recall@20": 0.37925,
+      "Recall@50": 0.4100333333333333,
+      "Recall@100": 0.43076666666666663
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.21631666666666666,
+      "Recall@5": 0.3697833333333333,
+      "Recall@10": 0.42560000000000003,
+      "Recall@20": 0.4712,
+      "Recall@50": 0.5192166666666667,
+      "Recall@100": 0.5481
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d256_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.2775166666666667,
+      "Recall@5": 0.48029999999999995,
+      "Recall@10": 0.5613166666666667,
+      "Recall@20": 0.6266833333333334,
+      "Recall@50": 0.6981333333333333,
+      "Recall@100": 0.7390333333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d256_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.26975,
+      "Recall@5": 0.47423333333333334,
+      "Recall@10": 0.5533833333333333,
+      "Recall@20": 0.62465,
+      "Recall@50": 0.7007833333333333,
+      "Recall@100": 0.7448333333333333
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d256_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.25665,
+      "Recall@5": 0.4557166666666667,
+      "Recall@10": 0.5319166666666666,
+      "Recall@20": 0.5976833333333333,
+      "Recall@50": 0.6642,
+      "Recall@100": 0.7062666666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.Flat_d512_within_token",
+    "metrics": {
+      "Recall@1": 0.3537,
+      "Recall@5": 0.59615,
+      "Recall@10": 0.6892333333333334,
+      "Recall@20": 0.7747999999999999,
+      "Recall@50": 0.8644166666666667,
+      "Recall@100": 0.9199833333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.17296666666666663,
+      "Recall@5": 0.26730000000000004,
+      "Recall@10": 0.2998333333333334,
+      "Recall@20": 0.32611666666666667,
+      "Recall@50": 0.3485833333333333,
+      "Recall@100": 0.36173333333333335
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.22196666666666667,
+      "Recall@5": 0.34273333333333333,
+      "Recall@10": 0.38376666666666664,
+      "Recall@20": 0.4275833333333333,
+      "Recall@50": 0.46148333333333336,
+      "Recall@100": 0.48001666666666665
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.3017833333333333,
+      "Recall@5": 0.4924333333333333,
+      "Recall@10": 0.5617000000000001,
+      "Recall@20": 0.6279666666666667,
+      "Recall@50": 0.6991499999999999,
+      "Recall@100": 0.73455
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.18230000000000002,
+      "Recall@5": 0.29455000000000003,
+      "Recall@10": 0.3348,
+      "Recall@20": 0.37138333333333334,
+      "Recall@50": 0.4018,
+      "Recall@100": 0.41820000000000007
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.2293333333333333,
+      "Recall@5": 0.37151666666666666,
+      "Recall@10": 0.42105000000000004,
+      "Recall@20": 0.46729999999999994,
+      "Recall@50": 0.5094666666666666,
+      "Recall@100": 0.5371166666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.30689999999999995,
+      "Recall@5": 0.5045166666666666,
+      "Recall@10": 0.5787333333333333,
+      "Recall@20": 0.6451,
+      "Recall@50": 0.7132833333333333,
+      "Recall@100": 0.75405
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.2075,
+      "Recall@5": 0.33491666666666664,
+      "Recall@10": 0.3790333333333333,
+      "Recall@20": 0.4164166666666666,
+      "Recall@50": 0.4506833333333333,
+      "Recall@100": 0.4701
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.25045,
+      "Recall@5": 0.40995,
+      "Recall@10": 0.4638,
+      "Recall@20": 0.5089333333333333,
+      "Recall@50": 0.5607,
+      "Recall@100": 0.58885
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d512_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.32576666666666665,
+      "Recall@5": 0.5386166666666665,
+      "Recall@10": 0.6133666666666667,
+      "Recall@20": 0.6821666666666666,
+      "Recall@50": 0.7532000000000001,
+      "Recall@100": 0.7994
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d512_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.3001,
+      "Recall@5": 0.5041166666666667,
+      "Recall@10": 0.5809166666666667,
+      "Recall@20": 0.6528666666666667,
+      "Recall@50": 0.72285,
+      "Recall@100": 0.7633
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d512_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.3060833333333333,
+      "Recall@5": 0.5067333333333334,
+      "Recall@10": 0.5847333333333333,
+      "Recall@20": 0.6553000000000001,
+      "Recall@50": 0.7204666666666667,
+      "Recall@100": 0.7667333333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.Flat_d1024_within_token",
+    "metrics": {
+      "Recall@1": 0.37110000000000004,
+      "Recall@5": 0.6369666666666667,
+      "Recall@10": 0.7141333333333332,
+      "Recall@20": 0.7958333333333333,
+      "Recall@50": 0.8874500000000001,
+      "Recall@100": 0.9268166666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl200_np20",
+    "metrics": {
+      "Recall@1": 0.18155000000000002,
+      "Recall@5": 0.27129999999999993,
+      "Recall@10": 0.29866666666666664,
+      "Recall@20": 0.32135,
+      "Recall@50": 0.3445833333333333,
+      "Recall@100": 0.3516166666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl200_np40",
+    "metrics": {
+      "Recall@1": 0.22325,
+      "Recall@5": 0.3594,
+      "Recall@10": 0.39751666666666663,
+      "Recall@20": 0.43448333333333333,
+      "Recall@50": 0.46814999999999996,
+      "Recall@100": 0.4796833333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl200_np100",
+    "metrics": {
+      "Recall@1": 0.30125,
+      "Recall@5": 0.4998666666666667,
+      "Recall@10": 0.55975,
+      "Recall@20": 0.6181333333333333,
+      "Recall@50": 0.6842166666666667,
+      "Recall@100": 0.7071833333333334
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl500_np50",
+    "metrics": {
+      "Recall@1": 0.18868333333333331,
+      "Recall@5": 0.29764999999999997,
+      "Recall@10": 0.3283833333333333,
+      "Recall@20": 0.3595,
+      "Recall@50": 0.3868666666666667,
+      "Recall@100": 0.39815
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl500_np100",
+    "metrics": {
+      "Recall@1": 0.24598333333333333,
+      "Recall@5": 0.3994,
+      "Recall@10": 0.44043333333333334,
+      "Recall@20": 0.48188333333333333,
+      "Recall@50": 0.5218333333333334,
+      "Recall@100": 0.5381
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl500_np250",
+    "metrics": {
+      "Recall@1": 0.32061666666666666,
+      "Recall@5": 0.5365833333333333,
+      "Recall@10": 0.5983999999999999,
+      "Recall@20": 0.6545333333333333,
+      "Recall@50": 0.7260833333333333,
+      "Recall@100": 0.7524500000000001
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl1000_np100",
+    "metrics": {
+      "Recall@1": 0.21521666666666667,
+      "Recall@5": 0.3527833333333333,
+      "Recall@10": 0.39063333333333333,
+      "Recall@20": 0.4337166666666667,
+      "Recall@50": 0.4690833333333333,
+      "Recall@100": 0.48455000000000004
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl1000_np200",
+    "metrics": {
+      "Recall@1": 0.26698333333333335,
+      "Recall@5": 0.43638333333333335,
+      "Recall@10": 0.48723333333333335,
+      "Recall@20": 0.53255,
+      "Recall@50": 0.5818666666666668,
+      "Recall@100": 0.5973166666666666
+    }
+  },
+  {
+    "run_name": "homedepot.rare.IVF_d1024_within_token_nl1000_np500",
+    "metrics": {
+      "Recall@1": 0.3282,
+      "Recall@5": 0.5530666666666666,
+      "Recall@10": 0.6175833333333333,
+      "Recall@20": 0.6825333333333333,
+      "Recall@50": 0.7564166666666667,
+      "Recall@100": 0.7820666666666667
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d1024_within_token_M64_efC100_efS100",
+    "metrics": {
+      "Recall@1": 0.30839999999999995,
+      "Recall@5": 0.5302833333333333,
+      "Recall@10": 0.5942,
+      "Recall@20": 0.6544666666666668,
+      "Recall@50": 0.7335166666666667,
+      "Recall@100": 0.7575
+    }
+  },
+  {
+    "run_name": "homedepot.rare.HNSW_d1024_within_token_M64_efC200_efS100",
+    "metrics": {
+      "Recall@1": 0.30595,
+      "Recall@5": 0.5268999999999999,
+      "Recall@10": 0.5894166666666666,
+      "Recall@20": 0.65155,
+      "Recall@50": 0.72205,
+      "Recall@100": 0.7449166666666668
+    }
+  },
+  {
+    "run_name": "homedepot.rare.BM25",
+    "metrics": {
+      "Recall@1": 0.5534534534534534,
+      "Recall@5": 0.8144477811144477,
+      "Recall@10": 0.8777610944277612,
+      "Recall@20": 0.9191858525191858,
+      "Recall@50": 0.953737070403737,
+      "Recall@100": 0.9678845512178845
+    }
+  }
+]

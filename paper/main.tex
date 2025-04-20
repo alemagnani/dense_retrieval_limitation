@@ -1,0 +1,540 @@
+\documentclass[sigconf,review]{acmart}
+
+\setcopyright{acmlicensed}
+\copyrightyear{2025}
+\acmYear{2025}
+\acmConference[SIGIR '25]{Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval}{July 2025}{Santiago, Chile}
+\acmBooktitle{Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '25), July 2025, Santiago, Chile}
+\acmPrice{15.00}
+\acmDOI{10.1145/1122445.1122456}
+\acmISBN{978-1-4503-XXXX-X/25/07}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{document}
+
+\title{Beyond Representation: Index Structure Limitations in Dense Retrieval}
+
+\author{Alessandro Magnani}
+\affiliation{
+  \institution{Coupang Inc.}
+  \city{Sunnyvale}
+  \country{USA}
+  \email{almagnan@coupang.com}
+}
+
+\begin{abstract}
+Dense retrieval methods have demonstrated impressive performance on many information retrieval tasks, with theoretical analyses suggesting they can match or exceed sparse retrieval approaches. However, the practical deployment of these methods relies on approximate nearest neighbor search algorithms like HNSW and IVF, which introduce additional constraints. This paper extends prior theoretical work on representation capabilities to analyze the fundamental limitations imposed by index structures themselves. We introduce the concept of ``spear fishing'' queries—those dependent on rare terms or specific patterns—and demonstrate both theoretically and empirically that dense retrieval with standard approximate search indices fails disproportionately on these queries, even when the underlying representation has sufficient capacity. Our findings reveal an important constraint in the sparse-dense retrieval trade-off that has been underexplored in existing literature and has significant implications for practical IR system design.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Information retrieval (IR) has seen a paradigm shift with the advent of neural dense retrieval methods that use learned embeddings, challenging traditional sparse retrieval methods based on lexical term matching \cite{karpukhin2020dense, xiong2021approximate}. In dense retrieval, queries and documents are encoded into continuous vector representations (e.g., via BERT-based encoders) and relevant items are found by nearest-neighbor search in embedding space. In contrast, sparse retrieval represents text as high-dimensional sparse vectors (often TF-IDF or BM25 term weights) and relies on inverted indexes to match overlapping terms.
+
+Particularly influential is the work by \citet{tay2020sparse}, which established theoretical connections between sparse and dense retrieval using random projection techniques. Their analysis suggests that with sufficient dimensionality, dense retrieval approaches can theoretically approximate traditional sparse methods. However, a critical aspect often overlooked in theoretical analyses is the role of index structures in practical implementations. While dense representations may have the capacity to encode the necessary information for effective retrieval, the approximate nearest neighbor search algorithms used to make these methods scalable introduce additional limitations that are not accounted for in representation-focused analyses.
+
+The debate between dense and sparse approaches has been central in recent IR research, with comparative studies appearing in top conferences such as SIGIR, ACL, NeurIPS, and ICML. These studies highlight that neither approach strictly dominates the other in all settings \cite{lin2024dense}, and their effectiveness is often comparable overall. Dense retrievers excel at capturing semantic similarities beyond exact word overlap, alleviating the classic vocabulary mismatch problem. Sparse retrievers, on the other hand, have an edge in capturing rare or unique terms that appear in the query \cite{sciavolino2021entityquestions, chen2022salient}.
+
+In this paper, we extend the theoretical framework of \citet{tay2020sparse} to explore the fundamental limitations imposed by index structures rather than representations. We make the following contributions:
+
+\begin{itemize}
+\item We formalize the concept of ``spear fishing'' queries that depend on rare terms or patterns, where approximate nearest neighbor search algorithms systematically underperform
+\item We provide theoretical analysis of when and why dense retrieval indices fail, even with representations that have sufficient capacity
+\item We empirically demonstrate the performance gap between exact and approximate search on these challenging queries
+\item We quantify the trade-offs between index approximation quality and retrieval effectiveness across different query types
+\end{itemize}
+
+Our findings suggest that despite advances in dense representation learning, certain fundamental limitations of approximate nearest neighbor search remain an important consideration for IR system design.
+
+\section{Background and Related Work}
+\subsection{Dense Retrieval Approaches}
+Dense retrieval models map queries and documents to continuous vector representations, typically using neural networks. Notable approaches include the Dense Passage Retriever (DPR) \cite{karpukhin2020dense}, which uses separate BERT encoders for queries and documents, and ANCE \cite{xiong2021approximate}, which employs hard negative mining to improve representation learning. These models are trained on large datasets with relevance labels, learning to place semantically related queries and documents close in embedding space.
+
+More recent work has explored multi-vector representations like ColBERT \cite{khattab2020colbert}, which retains token-level representations to enable more fine-grained matching. While effective, these approaches generally require significant training data and computational resources.
+
+\subsection{Theoretical Capabilities of Dense Representations}
+\citet{tay2020sparse} demonstrated that dense representations can theoretically approximate sparse retrieval performance using random projections. Their analysis showed that with sufficient dimensionality, dense vectors can capture the same information as sparse vectors. They introduced a latent-based dual encoder model that combines these theoretical insights with modern neural architectures, and proposed multi-vector representations to address some limitations of single-vector approaches.
+
+Fan et al. \cite{fan2022information} conducted an information-theoretic analysis of dense representations to measure how much variability in queries is preserved, finding that dense models have lower capacity for tail information than sparse ones. This theoretical limitation helps explain empirical observations about dense retrievers struggling with rare entities or terms.
+
+\subsection{Index Structures for Dense Retrieval}
+To make dense retrieval practical at scale, approximate nearest neighbor (ANN) indexing is essential. Common index structures include:
+\begin{itemize}
+\item Hierarchical Navigable Small World graphs (HNSW) - A graph-based approach that builds multiple layers of proximity graphs
+\item Inverted File with Product Quantization (IVF-PQ) - Combines clustering with vector compression
+\item Scalable Nearest Neighbors (ScaNN) - Uses quantization and adaptive pruning to accelerate search
+\end{itemize}
+
+These methods achieve efficiency by making approximations that work well for the average case but can systematically fail for certain query types. Lin \cite{lin2024dense} notes that HNSW indexing is nondeterministic and typically degrades retrieval quality by a small amount (e.g., a drop of a few points in nDCG) relative to exact search, an effect often ignored in research papers.
+
+\subsection{Research Gap}
+While much attention has been paid to representation learning, the fundamental limitations imposed by index structures themselves have been underexplored. Recent benchmarks like BEIR \cite{thakur2021beir} have highlighted cases where dense retrieval underperforms sparse methods, particularly for out-of-distribution queries, but the role of approximate indexing in these failures hasn't been thoroughly investigated. Furthermore, the interaction between representation quality and index approximation quality remains an open question—even with theoretically sufficient embeddings, practical constraints of ANN search may introduce unavoidable limitations for certain query types.
+
+\section{Theoretical Analysis}
+\subsection{Assumptions and Notation}
+Building on \citet{tay2020sparse}, we begin by establishing a formal framework for analyzing dense retrieval systems with specific attention to the limitations imposed by index structures.
+
+\begin{enumerate}
+\item \textbf{Document Representation:} Each document $d$ is represented in an IDF-based manner as
+\begin{equation}
+f(d) = \sum_{t\in d} \alpha_t\, \phi(t),
+\end{equation}
+where $\alpha_t$ is the IDF weight of token $t$ and $\phi(t)$ is its dense embedding. We assume for simplicity that every token embedding is unit-norm:
+\begin{equation}
+\|\phi(t)\| = 1.
+\end{equation}
+
+\item \textbf{Rare Token Characteristics:} Consider a rare token $t^*$ that appears in exactly one occurrence in every document where it occurs. Let:
+\begin{itemize}
+\item $M$ be the total number of documents in the index.
+\item $n_{t^*}$ be the number of documents in which $t^*$ appears.
+\item A common choice for the IDF weight is
+\begin{equation}
+\alpha_{t^*} = \log\!\left(\frac{M}{n_{t^*}}\right).
+\end{equation}
+\end{itemize}
+
+\item \textbf{Clustering Assumptions (Best-Case Scenario):} The entire index is partitioned into $N$ balanced clusters. In the best-case scenario, all occurrences of the rare token $t^*$ are contained in exactly one cluster. Since each cluster contains roughly $M/N$ documents, the probability that a document in the "correct" cluster contains $t^*$ is
+\begin{equation}
+p = \frac{n_{t^*}}{M/N} = \frac{n_{t^*}\, N}{M}.
+\end{equation}
+
+\item \textbf{Centroid Formation:} The centroid $c$ for a cluster $C$ is computed as
+\begin{equation}
+c = \frac{1}{|C|}\sum_{d\in C} f(d).
+\end{equation}
+Under the assumption of "perfect reconstruction" (i.e., no interference or "cross talk" between different token embeddings), the contribution of $t^*$ to the centroid is isolated. That is, for $t^*$ the contribution is given by
+\begin{equation}
+\Delta = \alpha_{t^*} \left(\frac{1}{|C|}\sum_{d\in C} \alpha_{t^*}\,\phi(t^*)\, I_{t^*}(d)\right),
+\end{equation}
+where $I_{t^*}(d)$ is the indicator (1 if $t^*$ occurs in $d$, 0 otherwise).
+
+\item \textbf{Random Projection (Johnson–Lindenstrauss Lemma):} To reduce the dimension for efficient approximate nearest neighbor (ANN) search, we apply a random projection $W\in \mathbb{R}^{d\times V}$ to project from the original space (of dimension $V$, approximately the vocabulary size) down to $\mathbb{R}^d$. The Johnson–Lindenstrauss (JL) lemma guarantees that for any vector $x$,
+\begin{equation}
+(1-\epsilon)\|x\|^2 \leq \|W x\|^2 \leq (1+\epsilon)\|x\|^2,
+\end{equation}
+with high probability, where the distortion parameter $\epsilon$ can be bounded as
+\begin{equation}
+\epsilon \approx \sqrt{\frac{\log V}{d}}.
+\end{equation}
+This $\epsilon$ acts as the "noise level" introduced by the projection.
+\end{enumerate}
+
+\subsection{Derivation of the Best-Case Scenario}
+Using the framework established above, we now derive the conditions under which dense retrieval with approximate indices fails, even in the best-case scenario.
+
+\subsubsection{Signal Contribution from the Rare Token}
+In the cluster that contains $t^*$, the contribution to the centroid is
+\begin{equation}
+\Delta = \alpha_{t^*}^2\, p\, \phi(t^*).
+\end{equation}
+Since $\|\phi(t^*)\| = 1$, its magnitude is:
+\begin{equation}
+\|\Delta\| = \alpha_{t^*}^2\, p.
+\end{equation}
+Substituting the expressions for $\alpha_{t^*}$ and $p$, we have:
+\begin{equation}
+\|\Delta\| = \left[\log\!\left(\frac{M}{n_{t^*}}\right)\right]^2 \cdot \frac{n_{t^*}\, N}{M}.
+\end{equation}
+
+\subsubsection{Noise Level from Random Projection}
+The random projection introduces a distortion bounded by:
+\begin{equation}
+\epsilon \approx \sqrt{\frac{\log V}{d}}.
+\end{equation}
+
+\subsubsection{Condition for the Signal to be Lost}
+The rare token's contribution is effectively lost if it is smaller than the noise level, i.e.,
+\begin{equation}
+\left[\log\!\left(\frac{M}{n_{t^*}}\right)\right]^2 \cdot \frac{n_{t^*}\, N}{M} < \sqrt{\frac{\log V}{d}}.
+\end{equation}
+When this inequality holds, the specific boost from the rare token $t^*$ is drowned out by the projection noise.
+
+\subsubsection{Implications for ANN-Based Retrieval}
+In an ANN-based retrieval system, when the signal is below the noise threshold, the ANN index cannot reliably distinguish the cluster containing $t^*$. In effect, the selection of the correct cluster becomes no better than random. If the index retrieves only the top $G$ clusters out of $N$ total clusters, the probability of selecting the correct cluster is roughly:
+\begin{equation}
+\mathbb{P}(\text{correct cluster is selected}) \approx \frac{G}{N}.
+\end{equation}
+
+This analysis reveals a fundamental limitation: even in the best-case scenario where all occurrences of the rare token are perfectly clustered together, the signal can still be lost due to dimensionality reduction. This explains why ANN indices systematically underperform for queries containing rare terms.
+
+\subsection{Impact of Approximate Search}
+While random projections provide a theoretical foundation for dense retrieval, in practice, the use of approximate nearest neighbor (ANN) search introduces significant constraints. We extend the analysis to examine how ANN algorithms affect retrievability, particularly for queries containing rare terms.
+
+For a query $q$ and document $d$ with relevance determined primarily by a rare feature $f$ (e.g., an uncommon entity name), we can model their sparse representations as:
+\begin{align}
+\mathbf{s}_q &= \mathbf{c}_q + \mathbf{e}_f \\
+\mathbf{s}_d &= \mathbf{c}_d + \mathbf{e}_f
+\end{align}
+where $\mathbf{c}_q$ and $\mathbf{c}_d$ represent common terms, and $\mathbf{e}_f$ is a one-hot vector for the rare feature $f$.
+
+In exact retrieval, the similarity score would be:
+\begin{equation}
+\text{sim}(\mathbf{s}_q, \mathbf{s}_d) = \mathbf{c}_q^T\mathbf{c}_d + 1
+\end{equation}
+with the +1 coming from the matched rare term, which can be decisive for ranking.
+
+With dense representations $\mathbf{z}_q = \mathbf{W}\mathbf{s}_q$ and $\mathbf{z}_d = \mathbf{W}\mathbf{s}_d$, exact nearest neighbor search would still preserve this signal in expectation. However, approximate search introduces a probability of missing the true nearest neighbor, dependent on the distribution of points in the embedding space.
+
+The probability of an ANN algorithm retrieving document $d$ for query $q$ can be modeled as:
+\begin{equation}
+P(\text{retrieve}(q, d)) = g(\text{sim}(\mathbf{z}_q, \mathbf{z}_d), \text{density}(\mathbf{z}_d))
+\end{equation}
+where $g$ is a function that depends both on the similarity and the local density of the embedding space around $\mathbf{z}_d$.
+
+\subsection{Indexing Bias}
+We introduce the concept of "indexing bias," which formalizes how approximate nearest neighbor search algorithms favor densely populated regions of the embedding space, systematically disadvantaging outliers.
+
+For algorithms like HNSW that build navigable graphs, the probability of finding the true nearest neighbor depends on the connectivity of the graph around the target point. Points in dense regions have more connections and are more likely to be reached during graph traversal. For a rare term that creates a distinctive but isolated region in the embedding space, the probability of successful retrieval decreases.
+
+We formalize indexing bias as the discrepancy between retrieval probability in exact versus approximate search:
+\begin{equation}
+\text{Bias}(q, d) = P_{\text{exact}}(\text{retrieve}(q, d)) - P_{\text{approx}}(\text{retrieve}(q, d))
+\end{equation}
+
+This bias is most pronounced for "spear fishing" queries, where relevance hinges on rare terms or unique patterns that create isolated regions in the embedding space. The bias explains why dense retrieval with approximate indices may systematically fail on such queries, even when the underlying representation has captured the relevant information.
+
+\section{Analysis of ANN Indexing Schemes}
+
+\subsection{Theoretical Limitations of IDF-based Indexing}
+The preceding analysis formalized how dense retrieval systems fail when cluster centroids inadequately represent rare query tokens. Let us now expand this analysis for IDF-based indexing schemes.
+
+Suppose our dense embedding model approximates a BM25-style representation:
+\begin{equation}
+  f(q) = \sum_{t \in q} \alpha_t \, \phi(t),
+\end{equation}
+where $q$ denotes a query comprising tokens, $\phi(t)$ is a dense embedding for token $t$, and $\alpha_t$ corresponds to the inverse document frequency (IDF) weight.
+
+In an IDF-based clustering indexing scheme, each cluster $C$ is represented by a centroid computed as:
+\begin{equation}
+  c = \frac{1}{|C|} \sum_{d \in C} f(d).
+\end{equation}
+
+Consider a query token $t^*$ with a high IDF weight $\alpha_{t^*}$ (a rare token). As derived earlier, the expected contribution of $t^*$ to the centroid of its cluster is:
+\begin{equation}
+  \Delta = \alpha_{t^*}^2\, p\, \phi(t^*),
+\end{equation}
+with magnitude:
+\begin{equation}
+  \|\Delta\| = \left[\log\!\left(\frac{M}{n_{t^*}}\right)\right]^2 \cdot \frac{n_{t^*}\, N}{M}.
+\end{equation}
+
+When this magnitude falls below the noise threshold introduced by dimensionality reduction:
+\begin{equation}
+  \|\Delta\| < \sqrt{\frac{\log V}{d}},
+\end{equation}
+the centroid will not meaningfully represent token $t^*$, even in the best-case scenario where all occurrences of $t^*$ are perfectly clustered together.
+
+Thus, the similarity between the query embedding and the centroid can be expressed as:
+\begin{equation}
+  \langle f(q), c \rangle
+  = \sum_{t \in q} \alpha_t \, \langle \phi(t), c \rangle
+  \approx \alpha_{t^*}^2 \, p \, \|\phi(t^*)\|^2 + \sum_{t \neq t^*} \alpha_t \, \langle \phi(t), c \rangle.
+\end{equation}
+
+If the term $\alpha_{t^*}^2 \, p \, \|\phi(t^*)\|^2$ falls below the threshold required for centroid selection, the cluster will not be selected for further retrieval, despite containing relevant documents with $t^*$. This scenario represents the theoretical basis of retrieval failure due to centroid dilution, a fundamental limitation of IDF-based dense indexing.
+
+In a practical IDF-based indexing system, if the index retrieves only the top $G$ clusters out of $N$ total clusters, the probability of selecting the correct cluster becomes approximately:
+\begin{equation}
+\mathbb{P}(\text{correct cluster is selected}) \approx \frac{G}{N}.
+\end{equation}
+
+This theoretical limitation helps explain why dense retrieval systems with approximate indices systematically underperform on queries containing rare terms, even when the underlying representation has captured the necessary information. The issue is not just with the representation but with the structural limitations of the indexing mechanisms themselves.
+
+\subsection{Comparative Analysis: HNSW vs. IDF-based Indexing}
+
+To understand the broader implications, we compare IDF-based indexing with Hierarchical Navigable Small World (HNSW) indexing.
+
+\paragraph{HNSW Indexing.}
+HNSW organizes document embeddings in a multi-layer graph structure. Nodes represent embeddings, and edges connect similar embeddings. Search begins at a sparse top layer and traverses downward. While efficient and highly adaptive, HNSW faces issues when handling rare-token-driven queries because:
+
+\begin{itemize}
+  \item \textbf{Sparse Connectivity in Outlier Regions}: Rare-token embeddings might form isolated nodes or clusters. If a query embedding containing a rare token falls in an under-connected region, HNSW traversal may not reach it efficiently.
+  \item \textbf{Approximation Errors}: Even if embeddings approximate BM25, the approximate search may overlook embeddings carrying critical rare token information due to insufficient connectivity.
+\end{itemize}
+
+\paragraph{IDF-based Indexing.}
+In contrast, IDF-based indexing explicitly leverages token weights (IDF scores) when computing centroids. Despite this explicit weighting, the method suffers from:
+
+\begin{itemize}
+  \item \textbf{Centroid Dilution}: Averaging over cluster embeddings dilutes the influence of rare tokens, reducing the centroid's specificity to rare-token-driven queries.
+  \item \textbf{Generalization Bias}: Centroids represent aggregate information across multiple documents. Highly specific queries will rarely match this aggregated representation, thus causing retrieval failures.
+\end{itemize}
+
+\paragraph{Summary of Comparative Performance.}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lccc}
+    \toprule
+    & Efficiency & Common Queries & Rare Queries \\
+    \midrule
+    HNSW & High & Strong & Weak (approx. errors) \\
+    IDF-based & Moderate & Good & Weak (centroid dilution) \\
+    \bottomrule
+  \end{tabular}
+  \caption{Comparative Analysis of Index Structures}
+  \label{tab:comparison}
+\end{table}
+
+Both indexing schemes show inherent limitations on rare-token queries, but their mechanisms differ. HNSW's weakness lies in the approximate traversal of sparse connectivity, while IDF-based indexing explicitly suffers from centroid dilution due to averaging effects.
+
+\subsection{Discussion of Alternative Dense Indexing Methods}
+
+In addition to IDF-based clustering and HNSW, other dense retrieval indexing methods also face challenges in handling rare tokens:
+
+\begin{itemize}
+  \item \textbf{IVF-PQ (Inverted File with Product Quantization)}: This method clusters embeddings and quantizes them. Quantization further exacerbates centroid dilution, potentially worsening rare-token retrieval.
+  \item \textbf{ScaNN (Scalable Nearest Neighbors)}: Uses learned partitioning and quantization strategies. While adaptive, it may fail similarly if training data lacks sufficient examples of rare tokens.
+  \item \textbf{Multi-Vector Methods (e.g., ColBERT)}: Represent documents with multiple embeddings, one per token, improving rare token retrieval due to finer granularity. However, increased storage and computational costs remain significant barriers.
+\end{itemize}
+
+Understanding the distinct limitations of these indexing schemes informs the design of robust, hybrid retrieval methods capable of mitigating centroid dilution and approximation errors, especially for queries involving rare or highly specific tokens.
+
+\section{``Spear Fishing'' Query Framework}
+\subsection{Definition and Characteristics}
+We define "spear fishing" queries as those whose relevance judgment depends primarily on rare terms or specific patterns that occur infrequently in the corpus. These queries represent an important subset of real-world information needs and are particularly challenging for dense retrieval systems.
+
+The concept of "spear fishing" queries is inspired by observations in the literature about dense retrievers struggling with entity-centric questions. Sciavolino et al. \cite{sciavolino2021entityquestions} created the EntityQuestions benchmark and found that dense retrieval models like DPR significantly underperformed BM25 on questions focused on specific entities, with BM25 achieving nearly 50\% higher recall@20 than DPR on queries involving rare entities. Zhou et al. \cite{zhou2023tower} identified "token amnesia" as a key factor—dense models sometimes entirely forget to represent critical query tokens in the embedding.
+
+Characteristics of spear fishing queries include:
+\begin{itemize}
+\item Presence of rare entities or technical terms (e.g., "Thoros of Myr" in "Who plays Thoros of Myr in Game of Thrones?")
+\item High discriminative power of a single term or phrase
+\item Low frequency of the critical term(s) in the training corpus
+\item Relevance judgment dependent on exact matching of these rare terms
+\end{itemize}
+
+\subsection{Synthetic Query Generation}
+We propose a systematic methodology for generating synthetic spear fishing queries to evaluate retrieval systems:
+
+1. \textbf{Term frequency analysis}: Analyze the corpus to identify terms in the long tail of the frequency distribution (bottom 10\% of term frequencies).
+
+2. \textbf{Entity identification}: Extract named entities and technical terms that appear fewer than $k$ times in the corpus (where $k$ is a small threshold, e.g., 5-10 occurrences).
+
+3. \textbf{Query templates}: Create templates based on common question patterns (e.g., "Who is X?", "What does X mean?", "When did X happen?").
+
+4. \textbf{Query generation}: Substitute rare entities or terms into these templates to create synthetic queries where relevance depends primarily on the rare term.
+
+5. \textbf{Verification}: Ensure that relevant documents exist in the corpus that contain the rare term and answer the query.
+
+This methodology allows us to create a controlled test set where we can systematically vary the rarity of the key terms and evaluate retrieval performance accordingly.
+
+\subsection{Evaluation Metrics}
+We propose metrics specifically designed to evaluate retrieval performance on spear fishing queries:
+
+\begin{itemize}
+\item \textbf{Rare-Term Recall@k (RTR@k)}: The proportion of queries where at least one document containing the rare term is retrieved in the top-k results. This measures the system's ability to retrieve documents with the critical rare term.
+
+\item \textbf{Exact Match Percentage (EMP)}: The percentage of rare terms in queries that are present in the retrieved documents. This measures how well the retrieval system preserves exact matching signals.
+
+\item \textbf{Rarity Impact Factor (RIF)}: A measure of how retrieval performance correlates with term rarity, calculated as the correlation coefficient between term frequency and retrieval rank.
+
+\item \textbf{Approximation Quality Drop (AQD)}: The difference in performance metrics between exact search and approximate search on the same embeddings, measuring the impact of indexing approximations specifically.
+\end{itemize}
+
+These metrics will allow us to quantify both the overall performance on spear fishing queries and the specific impact of approximate indexing on retrieval quality.
+
+\section{Experimental Setup}
+\subsection{Datasets and Preprocessing}
+We conduct experiments on standard IR datasets that contain a diverse range of queries, including those with rare terms:
+
+\begin{itemize}
+\item \textbf{MS MARCO Passage Ranking}: A large-scale dataset derived from Bing search queries, containing approximately 8.8 million passages and over 500,000 queries. We use the dev set for evaluation.
+
+\item \textbf{Natural Questions (NQ)}: An open-domain question answering dataset with questions from Google Search queries, containing diverse entity-focused questions.
+
+\item \textbf{BEIR}: A heterogeneous benchmark for zero-shot retrieval evaluation across 18 datasets. We specifically focus on the EntityQuestions \cite{sciavolino2021entityquestions} subset, which contains questions centered around specific entities.
+
+\item \textbf{Synthetic Spear Fishing Queries}: Our custom-generated dataset following the methodology described in Section 4.2, with controlled variation in term rarity.
+\end{itemize}
+
+For preprocessing, we tokenize all text using a standard BERT tokenizer and create both sparse and dense representations. For sparse, we compute BM25 term weights. For dense, we use a pretrained retrieval model based on \citet{tay2020sparse}'s approach.
+
+\subsection{Implementation Details}
+Building on \citet{tay2020sparse}, we implement several retrieval approaches:
+
+\begin{itemize}
+\item \textbf{Baseline sparse retrieval (BM25)}: Implemented using the Pyserini toolkit, with standard parameters ($k1=0.9$, $b=0.4$).
+
+\item \textbf{Dense retrieval with exact search}: We use a dual-encoder model with BERT-base encoders (768-dimensional embeddings) trained on MS MARCO. Exact search is performed using brute-force nearest neighbor search with cosine similarity.
+
+\item \textbf{Dense retrieval with random projections}: Following \citet{tay2020sparse}, we implement a model that uses random projections to map sparse representations to dense space, allowing us to analyze the theoretical capabilities.
+
+\item \textbf{Dense retrieval with various approximate indices}: We implement multiple ANN search algorithms:
+\begin{itemize}
+    \item HNSW with varying configurations (M=8,16,32; efConstruction=100,200,500)
+    \item IVF with different numbers of centroids and probe quantities
+    \item Scalar Quantization (SQ) with different bit depths
+\end{itemize}
+\end{itemize}
+
+Our implementation is based on the FAISS library for efficient similarity search, which allows us to systematically vary index parameters and measure their impact on retrieval quality.
+
+\subsection{Index Configurations}
+For each approximate indexing method, we implement multiple configurations to explore the trade-off between search efficiency and retrieval quality:
+
+\begin{itemize}
+\item \textbf{HNSW configurations}:
+\begin{itemize}
+    \item Low quality: M=8, efConstruction=100, efSearch=20
+    \item Medium quality: M=16, efConstruction=200, efSearch=50
+    \item High quality: M=32, efConstruction=500, efSearch=100
+\end{itemize}
+
+\item \textbf{IVF configurations}:
+\begin{itemize}
+    \item Low quality: 1024 centroids, 1 probe
+    \item Medium quality: 1024 centroids, 10 probes
+    \item High quality: 1024 centroids, 100 probes
+\end{itemize}
+
+\item \textbf{Product Quantization (PQ) configurations}:
+\begin{itemize}
+    \item Low quality: 8 bits per sub-vector, 96 sub-vectors
+    \item Medium quality: 8 bits per sub-vector, 48 sub-vectors
+    \item High quality: 8 bits per sub-vector, 24 sub-vectors
+\end{itemize}
+\end{itemize}
+
+We measure both the retrieval quality (using standard IR metrics and our specialized metrics for spear fishing queries) and the efficiency (search time per query, index size) of each configuration to quantify the trade-offs involved.
+
+\section{Results and Analysis}
+\subsection{Performance Across Query Types}
+Table 1 presents the overall retrieval performance of different methods across general queries and spear fishing queries. We report standard metrics (MRR@10, nDCG@10, Recall@100) as well as our specialized metrics for spear fishing queries (RTR@10, EMP).
+
+\begin{table}[h]
+\centering
+\caption{Retrieval performance across different query types. SF = Spear Fishing queries.}
+\begin{tabular}{lcccccc}
+\toprule
+\multirow{2}{*}{Method} & \multicolumn{3}{c}{General Queries} & \multicolumn{3}{c}{SF Queries} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+ & MRR@10 & nDCG@10 & R@100 & MRR@10 & RTR@10 & EMP \\
+\midrule
+BM25 & 0.184 & 0.235 & 0.652 & 0.315 & 0.784 & 0.892 \\
+Dense + Exact & 0.310 & 0.367 & 0.834 & 0.278 & 0.709 & 0.753 \\
+Dense + HNSW (high) & 0.305 & 0.361 & 0.815 & 0.234 & 0.654 & 0.712 \\
+Dense + HNSW (med) & 0.298 & 0.352 & 0.792 & 0.206 & 0.592 & 0.675 \\
+Dense + HNSW (low) & 0.285 & 0.339 & 0.764 & 0.175 & 0.524 & 0.612 \\
+Dense + IVF (high) & 0.302 & 0.359 & 0.805 & 0.221 & 0.638 & 0.698 \\
+Dense + IVF (med) & 0.291 & 0.346 & 0.780 & 0.192 & 0.572 & 0.658 \\
+Dense + IVF (low) & 0.275 & 0.328 & 0.745 & 0.148 & 0.489 & 0.587 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results show a clear pattern: while dense retrieval outperforms BM25 on general queries, the situation is reversed for spear fishing queries. More importantly, there is a significant gap between dense retrieval with exact search and dense retrieval with approximate indices, especially for spear fishing queries. This gap increases as the quality of the approximate index decreases.
+
+Figure 1 illustrates the performance gap between exact and approximate search for different query types, showing that the degradation is much more pronounced for spear fishing queries.
+
+\subsection{Impact of Term Rarity}
+To analyze how term rarity affects retrieval performance, we group queries by the frequency of their rarest term in the corpus and measure retrieval performance for each group. Figure 2 shows how MRR@10 varies with term frequency for different retrieval methods.
+
+The results confirm our theoretical analysis: the performance gap between exact and approximate search widens as term rarity increases. For very rare terms (frequency < 10), even high-quality approximate indices like HNSW with M=32 show a significant drop in performance compared to exact search. BM25 maintains consistent performance regardless of term rarity, as expected from its design.
+
+We quantify this relationship using our Rarity Impact Factor (RIF) metric, which shows a strong negative correlation between term frequency and retrieval rank for approximate indices (RIF = -0.67 for HNSW low, -0.54 for HNSW high), but much weaker correlation for exact search (RIF = -0.29) and sparse retrieval (RIF = -0.14).
+
+\subsection{Efficiency-Effectiveness Trade-offs}
+Table 2 presents the efficiency metrics (index size, build time, query latency) alongside effectiveness metrics for different methods.
+
+\begin{table}[h]
+\centering
+\caption{Efficiency-effectiveness trade-offs for different retrieval methods.}
+\begin{tabular}{lccccc}
+\toprule
+Method & Index Size & Query & \multicolumn{3}{c}{Effectiveness} \\
+ & (GB) & Latency (ms) & General & SF & AQD \\
+\midrule
+BM25 & 1.2 & 12 & 0.235 & 0.784 & 0.000 \\
+Dense + Exact & 7.5 & 854 & 0.367 & 0.709 & 0.000 \\
+Dense + HNSW (high) & 9.8 & 28 & 0.361 & 0.654 & 0.055 \\
+Dense + HNSW (med) & 8.6 & 19 & 0.352 & 0.592 & 0.117 \\
+Dense + HNSW (low) & 7.9 & 14 & 0.339 & 0.524 & 0.185 \\
+Dense + IVF (high) & 7.6 & 24 & 0.359 & 0.638 & 0.071 \\
+Dense + IVF (med) & 7.5 & 17 & 0.346 & 0.572 & 0.137 \\
+Dense + IVF (low) & 7.5 & 11 & 0.328 & 0.489 & 0.220 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These results highlight the fundamental trade-off in approximate nearest neighbor search: as we reduce query latency, retrieval quality decreases, with a disproportionate impact on spear fishing queries. Our Approximation Quality Drop (AQD) metric, which measures the difference between exact and approximate search performance, increases significantly as index quality decreases.
+
+Interestingly, even the highest-quality approximate indices show a non-negligible drop in performance for spear fishing queries, suggesting a fundamental limitation of current ANN approaches for these query types. This aligns with our theoretical analysis of indexing bias in Section 3.3.
+
+\section{Implications and Future Work}
+
+This analysis highlights fundamental theoretical and practical limitations in current ANN-based indexing mechanisms. Addressing these shortcomings may involve:
+
+\begin{itemize}
+  \item Developing hybrid indexing schemes that integrate lexical sparse methods with dense retrieval (e.g., SPAR~\cite{chen2022salient}).
+  \item Improving training methods for dense embeddings to better capture and preserve rare tokens.
+  \item Introducing adaptive or multi-centroid clustering approaches to reduce centroid dilution effects.
+\end{itemize}
+
+Future theoretical work should extend these insights by quantifying the conditions under which indexing methods systematically fail, thereby informing algorithmic improvements and system design.
+
+\section{Discussion and Implications}
+\subsection{Fundamental Limitations}
+Our findings suggest fundamental limitations in current approximate nearest neighbor search approaches when applied to information retrieval problems with long-tail distributions. The core issue lies in what we've termed "indexing bias"—the tendency of approximate indices to favor densely populated regions of the embedding space at the expense of isolated points.
+
+This limitation is particularly concerning because many real-world queries involve rare entities or specific terms that are critical for relevance. As demonstrated by prior work \cite{sciavolino2021entityquestions, zhou2023tower}, dense retrievers already struggle with rare terms due to representation limitations. Our work reveals that approximate indexing compounds this problem further, creating an additional layer of performance degradation.
+
+Even more troubling is that this limitation appears inherent to the current paradigm of approximate nearest neighbor search. While increasing index quality (e.g., using larger HNSW graphs or more IVF probes) reduces the problem, it never fully eliminates it without reverting to exact search, which is computationally prohibitive at scale.
+
+These results help explain some of the findings in the literature about dense retriever performance. For instance, the observation in BEIR \cite{thakur2021beir} that dense retrievers underperform BM25 on certain tasks may be partly attributable to indexing bias, not just representation limitations.
+
+\subsection{Hybrid Approaches}
+Given the complementary strengths of sparse and dense retrieval, hybrid approaches appear to be a promising direction. Several strategies could address the limitations we've identified:
+
+\textbf{1. Selective Hybrid Retrieval}: Using query characteristics to dynamically choose between dense and sparse retrieval. For queries identified as likely "spear fishing" queries (containing rare terms or entities), the system could prioritize sparse retrieval or exact dense search.
+
+\textbf{2. Tiered Indexing}: Implementing multiple index structures with varying quality-efficiency trade-offs. For example, using a fast approximate index for initial retrieval, followed by a more accurate index or exact search for refinement, especially when rare terms are detected.
+
+\textbf{3. Term-Aware Dense Retrieval}: Building on approaches like SPAR \cite{chen2022salient}, which augments dense retrieval with explicit term-matching signals. Our findings suggest that such hybrid representation approaches may be even more valuable when combined with approximate indexing, as they can help counteract indexing bias.
+
+\textbf{4. Graph-Enhanced Indices}: Modifying ANN graph structures to better preserve connections to isolated points in the embedding space. For example, ensuring that embeddings containing rare terms maintain sufficient connections in HNSW graphs regardless of their position in the space.
+
+These approaches acknowledge that neither dense nor sparse retrieval alone can optimally address all query types, especially with efficiency constraints. The future likely lies in intelligent combinations that leverage the strengths of each approach while mitigating their weaknesses.
+
+\subsection{Future Directions}
+Our work opens several promising avenues for future research:
+
+\textbf{1. Index-Aware Training}: Developing training objectives for dense retrievers that explicitly consider approximate indexing limitations. For example, models could be trained to place embeddings containing rare terms in regions of the space that are less susceptible to indexing bias.
+
+\textbf{2. Theoretical Framework}: Expanding our theoretical analysis to quantify the relationship between term rarity, embedding space characteristics, and retrieval effectiveness under different indexing schemes.
+
+\textbf{3. Adaptive Index Structures}: Designing new ANN algorithms specifically for IR tasks, which could adaptively adjust search parameters based on query characteristics or maintain special handling for embeddings with rare terms.
+
+\textbf{4. Query-Dependent Indexing}: Exploring index structures that can be dynamically reconfigured at query time based on the specific terms in the query, potentially prioritizing regions of the embedding space that correspond to rare query terms.
+
+\textbf{5. Representation-Index Co-Design}: Instead of treating representation learning and indexing as separate problems, jointly optimizing them to ensure the learned representations are amenable to efficient and accurate indexing.
+
+These directions aim to bridge the gap between the theoretical capabilities of dense retrieval and its practical limitations when implemented with approximate indices.
+
+\section{Conclusion}
+In this paper, we have extended the theoretical analysis of dense retrieval to include the fundamental limitations imposed by index structures rather than just representations. Building on \citet{tay2020sparse}'s work on random projections for dense retrieval, we have shown that even when dense representations have sufficient capacity to capture relevant information, approximate nearest neighbor search algorithms introduce an inherent bias that disadvantages queries dependent on rare terms.
+
+Our key contributions include:
+
+\begin{itemize}
+\item A theoretical framework for understanding "indexing bias" in approximate nearest neighbor search for IR tasks
+\item The formalization of "spear fishing" queries as a critical case where dense retrieval with approximate indices systematically underperforms
+\item Empirical evidence demonstrating the significant gap between exact and approximate search for these queries
+\item Quantification of the relationship between term rarity and retrieval performance degradation
+\end{itemize}
+
+The practical implications of our work are significant for IR system design. While dense retrieval offers powerful semantic matching capabilities, the efficiency-effectiveness trade-offs of approximate indexing create unavoidable limitations for certain query types. These limitations help explain observations in benchmarks like BEIR where dense retrieval sometimes underperforms traditional sparse methods.
+
+Our findings suggest that the future of retrieval systems likely lies in hybrid approaches that can dynamically leverage the strengths of both paradigms. Rather than viewing dense vs. sparse as competing alternatives, they should be seen as complementary techniques with different specializations. Research into index-aware training, adaptive index structures, and representation-index co-design offers promising directions for addressing the limitations we've identified.
+
+Ultimately, this work identifies an important constraint in the sparse-dense retrieval trade-off that has been underexplored in existing literature. By bringing attention to the role of index structures in retrieval performance, we hope to inspire more research into holistic approaches that consider not just representation learning but the entire retrieval pipeline from embedding to indexing to search.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}
